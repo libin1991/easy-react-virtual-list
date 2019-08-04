@@ -1,5 +1,5 @@
-## easy-cli
->  基于react + react-router +dva + es6 + less的脚手架
+## 基于easy-cli
+>  一个react + react-router  + es6 + less的脚手架
 
 ##  easy-react-virtual-list
 **一个精简的虚拟化列表组件，支持动态高度。**
@@ -8,7 +8,7 @@
 
 ## 扫码体验
 ![](./1.png)
- 
+**在线体验 [https://libin1991.github.io/easy-react-virtual-list/dist/](https://libin1991.github.io/easy-react-virtual-list/dist/)**
 
 ## 基本使用
 ```js
@@ -51,7 +51,7 @@ export default class Hello extends Component {
 }
 ```
 
-在线的 [https://libin1991.github.io/easy-react-virtual-list/dist/](https://libin1991.github.io/easy-react-virtual-list/dist/)
+
 
 ## Prop Types
 |Property|Type|Default|Required?|Description|
