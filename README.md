@@ -1,8 +1,8 @@
-## React-Whole-barrels
->  基于react + react-router +dva + es6 + less + antd的脚手架
+## easy-cli
+>  基于react + react-router +dva + es6 + less的脚手架
 
 ##  easy-react-virtual-list
-A tiny virtualization list component, supports dynamic height.
+**一个精简的虚拟化列表组件，支持动态高度。**
 
 >注意: 由于在 iOS UIWebviews 中，`scroll` 事件是在滚动停止之后触发的，所以不兼容iOS UIWebviews。[了解更多](https://developer.mozilla.org/en-US/docs/Web/Events/scroll#Browser_compatibility)
 
@@ -13,7 +13,7 @@ A tiny virtualization list component, supports dynamic height.
 ## 基本使用
 ```js
 import React, { Component } from 'react'
-import VirtualizedList from '@dwqs/react-virtual-list'
+import VirtualizedList from 'easy-react-virtual-list'
 
 export default class Hello extends Component {
   constructor (props) {
@@ -51,7 +51,7 @@ export default class Hello extends Component {
 }
 ```
 
-在线的 [demo](https://dwqs.github.io/react-virtual-list/)
+在线的 [https://libin1991.github.io/easy-react-virtual-list/dist/](https://libin1991.github.io/easy-react-virtual-list/dist/)
 
 ## Prop Types
 |Property|Type|Default|Required?|Description|
@@ -70,13 +70,4 @@ export default class Hello extends Component {
 |useWindow|Boolean|true||是否使 Window 成为滚动容器，此时会监听 `window` 上的 `scroll` 事件。在移动端建议使用|
 |scrollableTarget|String|undefined||设置滚动容器元素, 其值会用于 `document.getElementById`。Window 是默认的滚动容器。如果要自定义滚动容器，需要将属性 `useWindow` 置为 `false`，并且不要设置 `height` 属性 |
 
-## Development
-```shell
-git clone git@github.com:dwqs/react-virtual-list.git
-
-cd react-virtual-list
-
-npm i 
-
-npm run dev
-```
+ 
