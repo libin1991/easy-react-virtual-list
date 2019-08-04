@@ -21,62 +21,62 @@ const devConfig = {
 	},
 	module: {
 		rules: [{
-				test: /\.less$/,
-				exclude: /node_modules/,
-				use: ['style-loader',
-					{
-						loader: 'css-loader',
-						options: {
-							importLoaders: 2
-						}
-					}, 'less-loader', {
-						loader: 'postcss-loader',
-						options: {
-							ident: 'postcss',
-							plugins: (loader) => [
-								require('autoprefixer')(),
-								require('postcss-plugin-px2rem')({
-									rootValue: {
-										px: 124.2,
-										rpx: 248.4
-									},
-									unitPrecision: 3,
-									minPixelValue: 2
-								})
-								 
-							]
-						}
+			test: /\.less$/,
+			exclude: /node_modules/,
+			use: ['style-loader',
+				{
+					loader: 'css-loader',
+					options: {
+						importLoaders: 2
 					}
-				]
-			},
-			{
-				test: /\.css$/,
-				use: ['style-loader', 'css-loader', {
+				}, 'less-loader', {
 					loader: 'postcss-loader',
 					options: {
 						ident: 'postcss',
 						plugins: (loader) => [
 							require('autoprefixer')(),
-							require('postcss-plugin-px2rem')({
-								rootValue: {
-									px: 124.2,
-									rpx: 248.4
-								},
-								unitPrecision: 3,
-								minPixelValue: 2
-							})
-						 
+							// require('postcss-plugin-px2rem')({
+							// 	rootValue: {
+							// 		px: 124.2,
+							// 		rpx: 248.4
+							// 	},
+							// 	unitPrecision: 3,
+							// 	minPixelValue: 2
+							// })
+
 						]
 					}
-				}]
-			},
+				}
+			]
+		},
+		{
+			test: /\.css$/,
+			use: ['style-loader', 'css-loader', {
+				loader: 'postcss-loader',
+				options: {
+					ident: 'postcss',
+					plugins: (loader) => [
+						require('autoprefixer')(),
+						// require('postcss-plugin-px2rem')({
+						// 	rootValue: {
+						// 		px: 124.2,
+						// 		rpx: 248.4
+						// 	},
+						// 	unitPrecision: 3,
+						// 	minPixelValue: 2
+						// })
+
+					]
+				}
+			}]
+		},
 		]
 	},
 	devServer: {
 		contentBase: path.join(__dirname, '../dist')
 	},
 	plugins: [ // 插件
-	    new WebpackNotifierPlugin(),   //消息通知
+		new WebpackNotifierPlugin(),   //消息通知
 		new webpack.NamedModulesPlugin(), //用于启动HMR时可以显示模块的相对路径
 		new webpack.HotModuleReplacementPlugin(), // 开启模块热更新，热加载和模块热更新不同，热加载是整个页面刷新
 		new webpack.optimize.ModuleConcatenationPlugin(), // 运行 tree shaking 需要 ModuleConcatenationPlugin。通过 mode: "production" 可以添加此插件。如果你是开发环境就需要手动添加

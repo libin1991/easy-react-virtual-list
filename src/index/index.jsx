@@ -3,7 +3,7 @@ import './index.less'
 import React from 'react'
 import faker from 'faker/locale/zh_CN'
 
-// import VirtualizedList from '../src/index'
+import VirtualizedList from '../virtual-list/index'
 import Image from './Image'
 
 const pageSize = 50
@@ -99,17 +99,7 @@ export default class App extends React.Component {
       <div className='demo-wrap'>
         <h3>VirtualizedList</h3>
         <div className='list-container' id='container'>
-
-        </div>
-      </div>
-    )
-  }
-}
-
-
-/*
-
-<VirtualizedList
+          <VirtualizedList
             hasMore={this.state.hasMore}
             itemCount={this.state.data.length}
             estimatedItemHeight={180}
@@ -119,7 +109,8 @@ export default class App extends React.Component {
             loadMoreItems={this.loadNextPage}
             renderItem={this.renderItem}
           />
-
-
-
-*/
+        </div>
+      </div>
+    )
+  }
+}

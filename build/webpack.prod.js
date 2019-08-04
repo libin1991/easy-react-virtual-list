@@ -49,13 +49,13 @@ const prodConfig = {
             'process.env.NODE_ENV': JSON.stringify('production'),
         }),
         new webpack.HashedModuleIdsPlugin(),  //根据模块的相对路径生成一个四位数的hash
-        new webpack.optimize.CommonsChunkPlugin({
-            name: 'runtime'
-        })
+        // new webpack.optimize.CommonsChunkPlugin({
+        //     name: 'runtime'
+        // })
     ],
     optimization: {
         splitChunks: {
-            chunks: "all",    // 只对异步引入代码起作用，设置all时并同时配置vendors才对两者起作用
+            chunks: "async",    // 只对异步引入代码起作用，设置all时并同时配置vendors才对两者起作用
             minSize: 30000,   // 引入的库大于30kb时才会做代码分割
             minChunks: 1,     // 一个模块至少被用了1次才会被分割
             maxAsyncRequests: 5,     // 同时异步加载的模块数最多是5个，如果超过5个则不做代码分割
@@ -64,6 +64,7 @@ const prodConfig = {
             name: true,   // 开启自定义名称效果
             cacheGroups: {  // 判断分割出的代码放到哪个文件
                 commons: {
+                    name: "commons",
                     chunks: 'initial',
                     minChunks: 2,
                     maxInitialRequests: 5,
