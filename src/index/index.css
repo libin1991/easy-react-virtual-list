@@ -1,10 +1,8 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box
+  box-sizing: border-box;
 }
-
-
 html,
 body,
 .demo-wrap {
@@ -12,56 +10,45 @@ body,
   height: 100%;
   width: 100%;
 }
-
 h3 {
   text-align: center;
   padding: 30px;
 }
-
 .list-container {
   border: 1px solid #ccc;
 }
-
 .list-item {
   margin-left: 0px;
-
-  p {
-    padding: 5px;
-  }
-
-  img {
-    width: 100%;
-  }
 }
-
+.list-item p {
+  padding: 5px;
+}
+.list-item img {
+  width: 100%;
+}
 .item-wrapper {
   border-bottom: 1px solid #ccc;
-
-  &:last-child {
-    border: none
-  }
 }
-
+.item-wrapper:last-child {
+  border: none;
+}
 .placeholder {
   width: 300px;
   height: 150px;
-  background-color: #efefef
+  background-color: #efefef;
 }
-
 .loading {
   height: 150px;
   text-align: center;
   line-height: 150px;
 }
-
 .ending {
   height: 75px;
   text-align: center;
   line-height: 75px;
 }
-
 .github-corner {
   position: fixed;
   right: 0;
-  top: 0
+  top: 0;
 }
