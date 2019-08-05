@@ -97,7 +97,7 @@ export default class App extends React.Component {
   render() {
     return (
       <div className='demo-wrap'>
-        <h3>VirtualizedList</h3>
+        <h3>easy-react-virtual-list</h3>
         <div className='list-container' id='container'>
           <VirtualizedList
             hasMore={this.state.hasMore}
